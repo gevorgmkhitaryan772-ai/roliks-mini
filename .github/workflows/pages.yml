@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'roliks-mini-pwa.zip'
+      - 'roliks-mini-publish.zip'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 permissions:
@@ -21,9 +21,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Prepare site
         run: |
-          test -f roliks-mini-pwa.zip
+          test -f roliks-mini-publish.zip
           mkdir -p _site
-          unzip -o roliks-mini-pwa.zip -d _site
+          unzip -o roliks-mini-publish.zip -d _site
           test -f _site/index.html
       - name: Configure Pages
         uses: actions/configure-pages@v5
